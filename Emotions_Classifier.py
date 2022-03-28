@@ -125,11 +125,11 @@ import pickle
 with open('./models/sentiment_classifier.pkl', 'wb') as f:
     pickle.dump(clf, f)
 
-with open('./models/entiment_classifier.pkl', 'rb') as f:
+with open('./models/sentiment_classifier.pkl', 'rb') as f:
     loaded_clf = pickle.load(f)
-loaded_clf.predict(test_x_vectors[0])
+loaded_clf.predict(test_x_vectors)
 
 from sklearn.linear_model import Perceptron
 
 clf = Perceptron(tol=1e-3, random_state=0)
-clf.fit(X, y)  
+clf.fit(x, y)  
